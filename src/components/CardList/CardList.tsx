@@ -29,7 +29,7 @@ export const CardList = memo(() => {
         return (
             <Group
                 header={<Header>Список групп</Header>}
-                style={{margin: '1rem'}}
+                style={{margin: '0 1rem'}}
             >
                 <CardGrid size="l" className='list'>
                     {[...Array(12)].map((_, index) => (
