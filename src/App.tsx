@@ -1,5 +1,5 @@
-import { AppRoot, Panel, PanelHeader, View } from '@vkontakte/vkui';
-import { CardList } from './components/CardList/CardList';
+import { AppRoot, PanelHeader } from '@vkontakte/vkui';
+import { MainPage } from './Pages/MainPage';
 
 function App() {
   return (
@@ -7,11 +7,7 @@ function App() {
       <PanelHeader delimiter="none" shadow>
         Профильное задание - Frontend-разработчик в команду сообществ
       </PanelHeader>
-      <View activePanel="main">
-        <Panel id="main">
-          <CardList />
-        </Panel>
-      </View>
+      <MainPage />
     </AppRoot>
   );
 }

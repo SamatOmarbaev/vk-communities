@@ -11,12 +11,6 @@
     gap: .5rem;
 }
 
-.btn {
-    position: absolute;
-    right: 10px;
-    bottom: 10px;
-}
-
 .vkuiInternalCardGrid--size-l .vkuiCard:not(:first-child) {
     margin-top: 0;
 }

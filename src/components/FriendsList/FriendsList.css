@@ -1,0 +1,16 @@
+/* .vkuiPanelHeader--static.vkuiPanelHeader--fixed:before {
+    content: none;
+    display: none;
+} */
+
+.noFriends {
+    text-align: center;
+    padding: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    .vkuiModalPage--size-s .vkuiModalPage__in-wrap {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+}
