@@ -6,8 +6,12 @@ import { groupsData } from "../../mockData";
 import { Skeleton } from "../Skeleton/Skeleton";
 import './CardList.css'
 
-export const CardList = memo(() => {
-    const [groups, setGroups] = useState<IGroup[]>([]);
+interface CardListProps {
+    groups: IGroup[];
+    setGroups: (group: IGroup[]) => void;
+}
+
+export const CardList = memo(({groups, setGroups}: CardListProps) => {
     const [isLoading, setIsLoading] = useState<boolean>(true);
 
     useEffect(() => {
@@ -23,22 +27,7 @@ export const CardList = memo(() => {
         };
     
         getGroups();
-    }, []);
-
-    if (isLoading) {
-        return (
-            <Group
-                header={<Header>Список групп</Header>}
-                style={{margin: '0 1rem'}}
-            >
-                <CardGrid size="l" className='list'>
-                    {[...Array(12)].map((_, index) => (
-                        <Skeleton height={260} key={index} width={'100%'} border=".375rem" />
-                    ))}
-                </CardGrid>
-            </Group>
-        )
-    }
+    }, [setGroups]);
 
     return (
         <Group
@@ -46,9 +35,14 @@ export const CardList = memo(() => {
             style={{margin: '0 1rem'}}
         >
             <CardGrid size="l" className='list'>
-                {groups.map(group => (
-                    <CardItem group={group} key={group.id} /> 
-                ))}
+                {isLoading
+                    ?   [...Array(12)].map((_, index) => (
+                            <Skeleton height={260} key={index} width={'100%'} border=".375rem" />
+                        ))
+                    :   groups.map(group => (
+                            <CardItem group={group} key={group.id} /> 
+                        ))
+                }
             </CardGrid>
         </Group>
     )

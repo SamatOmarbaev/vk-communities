@@ -3,7 +3,7 @@ import { Avatar, Cell, Group, List,
   Panel, Paragraph, SimpleCell, SplitCol, 
   SplitLayout, View, 
 } from "@vkontakte/vkui";
-import { memo, useState } from "react";
+import { memo, useCallback, useState } from "react";
 import { User } from "../../types";
 import './FriendsList.css'
 import { Icon28ChevronDownOutline, Icon28ChevronRightCircle } from "@vkontakte/icons";
@@ -19,13 +19,13 @@ export const FriendsList = memo((props: MyModalProps) => {
   const [activeModal, setActiveModal] = useState<string>();
   const [modalHistory] = useState([]);
 
-  const changeActiveModal = (activeModal: string) => {
+  const changeActiveModal = useCallback((activeModal: string) => {
     setActiveModal(activeModal);
-  };
+  }, []);
 
-  const modalBack = () => {
+  const modalBack = useCallback(() => {
     changeActiveModal(modalHistory[modalHistory.length - 2]);
-  };
+  }, [modalHistory, changeActiveModal]);
 
   const modal = (
     <ModalRoot activeModal={activeModal} onClose={modalBack}>
