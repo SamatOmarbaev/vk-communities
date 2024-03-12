@@ -1,5 +1,5 @@
 import { CustomSelect, FormItem } from "@vkontakte/vkui"
-import { memo, useCallback } from "react"
+import { memo } from "react"
 import { selectTypes } from "../../../utility/utility"
 
 interface FilterByPrivacyProps {
@@ -10,10 +10,10 @@ interface FilterByPrivacyProps {
 export const FilterByPrivacy = memo((props: FilterByPrivacyProps) => {
     const {selectPrivacyType, onSelectPrivacyType} = props;
     
-    const handleSelectChange = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {
+    const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         const selectedValue = e.target.value;
         onSelectPrivacyType(selectedValue);
-    }, [onSelectPrivacyType]);
+    };
 
     return (
         <FormItem

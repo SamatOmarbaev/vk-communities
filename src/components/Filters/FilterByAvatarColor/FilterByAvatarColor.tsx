@@ -1,6 +1,6 @@
 import { CustomSelect, FormItem } from "@vkontakte/vkui"
-import { memo, useCallback } from "react"
-import { avatarColor } from "../../../utility/utility"
+import { memo } from "react"
+import { avatarColor } from "../../../utility/utility";
 
 interface FilterByAvatarColorProps {
     selectAvatarColorType?: string;
@@ -10,15 +10,16 @@ interface FilterByAvatarColorProps {
 export const FilterByAvatarColor = memo((props: FilterByAvatarColorProps) => {
     const {selectAvatarColorType, onSelectAvatarColorType} = props;
     
-    const handleSelectChange = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {
+    const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
         const selectedValue = e.target.value;
         onSelectAvatarColorType(selectedValue);
-    }, [onSelectAvatarColorType]);
+    };
 
     return (
         <FormItem
                 top="По цвету аватарки"
                 htmlFor="custom-search-algo-select-id"
+                style={{ flexBasis: '200px', flexGrow: 0 }}
             >
             <CustomSelect
                 id="select-type-select-id"

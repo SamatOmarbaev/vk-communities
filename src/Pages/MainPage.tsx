@@ -53,7 +53,6 @@ export const MainPage = () => {
                     onSelectType={filterByClosed}
                     onSelectTypeColor={filterByColors} 
                     onSelectTypeFriend={filterByFriends}
-                    groups={filteredGroups}
                 />
                 <CardList 
                     groups={filteredGroups}
