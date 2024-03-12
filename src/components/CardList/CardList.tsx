@@ -2,9 +2,9 @@ import { CardGrid, Group, Header } from "@vkontakte/vkui"
 import { CardItem } from "../CardItem/CardItem"
 import { IGroup } from "../../types"
 import { memo, useEffect, useState } from "react";
-import { groupsData } from "../../mockData";
 import { Skeleton } from "../Skeleton/Skeleton";
 import './CardList.css'
+import groupsData from '../../groups.json';
 
 interface CardListProps {
     groups: IGroup[];
@@ -12,16 +12,18 @@ interface CardListProps {
 }
 
 export const CardList = memo(({groups, setGroups}: CardListProps) => {
-    const [isLoading, setIsLoading] = useState<boolean>(true);
+    const [isLoading, setIsLoading] = useState<boolean>(false);
 
     useEffect(() => {
         const getGroups = () => {
+            setIsLoading(true)
             setTimeout(() => {
                 if (groupsData.result === 1 && groupsData.data) {
                     setGroups(groupsData.data);
                     setIsLoading(false);
                 } else {
                     console.error('Ошибка при получении списка групп');
+                    setIsLoading(false)
                 }
             }, 1000);
         };

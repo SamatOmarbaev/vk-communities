@@ -1,4 +1,6 @@
-[
+{
+  "result": 1,
+  "data": [
     {
       "id": 1,
       "name": "Котики",
@@ -180,4 +182,5 @@
       "avatar_color": "blue",
       "members_count": 23
     }
-]
+  ]
+}

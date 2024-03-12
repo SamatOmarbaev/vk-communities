@@ -1,0 +1,11 @@
+.vkuiInternalFormLayoutGroup--mode-horizontal:not(.vkuiInternalFormLayoutGroup--segmented) .vkuiFormItem+.vkuiFormItem {
+    margin-left: 0;
+}
+
+.filters {
+    column-gap: 1rem;
+}
+
+/* @media screen and (max-width: 425px) {
+
+} */

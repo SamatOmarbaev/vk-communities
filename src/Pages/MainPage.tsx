@@ -3,7 +3,8 @@ import { CardList } from "../components/CardList/CardList"
 import { Filters } from "../components/Filters/Filters"
 import { useCallback, useEffect, useState } from "react";
 import { IGroup } from "../types";
-import { groupsData } from "../mockData";
+import groupsData from '../groups.json';
+
 
 export const MainPage = () => {
     const [groups, setGroups] = useState<IGroup[]>([]);

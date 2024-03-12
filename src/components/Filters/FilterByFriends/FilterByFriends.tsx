@@ -1,7 +1,8 @@
 import { CustomSelect, FormItem } from "@vkontakte/vkui"
 import { memo } from "react"
 import { IGroup, User } from "../../../types";
-import { groupsData } from "../../../mockData";
+import groupsData from '../../../groups.json';
+
 
 interface FilterByFriendsProps {
     selectFriendsType?: string;
